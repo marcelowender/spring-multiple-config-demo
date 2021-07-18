@@ -2,6 +2,9 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
 name: Multiple config files with CI/CD
+defaults:
+  run:
+    shell: bash -ieo pipefail {0}
 
 on: [push]
 
@@ -16,6 +19,10 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
+      - name: Adding secret
+        run: |
+          printf ${{ secrets.DEMO_PROPERTIES_VALUE }} >> src/main/resources/applicationconfiga.properties
+        shell: bash
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
 
