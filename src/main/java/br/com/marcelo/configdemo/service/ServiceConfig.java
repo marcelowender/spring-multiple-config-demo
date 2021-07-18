@@ -6,27 +6,30 @@ import br.com.marcelo.configdemo.config.ConfigB;
 import br.com.marcelo.configdemo.config.SpringDefaultConfig;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @Slf4j
-@Component
-public class ServiceConfig implements CommandLineRunner {
+@Service
+public class ServiceConfig {
 
     private final ConfigA configA;
     private final ConfigB configB;
     private final SpringDefaultConfig springDefaultConfig;
 
-    @Override
-    public void run(String... args) {
-        log.error("Config configA valueA propertie", configA.getValueA());
-        log.error("Config configA valueB propertie", configA.getValueB());
+    public List<String> getConfigValues() {
+        List<String> configValues = new ArrayList<>();
+        configValues.add("Config configA valueA propertie: " + configA.getValueA());
+        configValues.add("Config configA valueB propertie:" + configA.getValueB());
 
 
-        log.error("Config configB valueA propertie", configB.getValueA());
-        log.error("Config configB valueB propertie", configB.getValueB());
+        configValues.add("Config configB valueA propertie:" + configB.getValueA());
+        configValues.add("Config configB valueB propertie:" + configB.getValueB());
 
-        log.error("Config springDefaultConfig valuea propertie", springDefaultConfig.getValueA());
+        configValues.add("Config springDefaultConfig valuea propertie:" + springDefaultConfig.getValueA());
+        return configValues;
     }
 }
