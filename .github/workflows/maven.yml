@@ -16,11 +16,10 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Build with Maven
-        env:
-          DEMO_PROPERTIES_VALUE: ${{ secrets.DEMO_PROPERTIES_VALUE }}
-        run: mvn --batch-mode --update-snapshots verify
       - name: Adding secret
         run: |
-          echo ${{ secrets.DEMO_PROPERTIES_VALUE }}
+          printf ${{ secrets.DEMO_PROPERTIES_VALUE }} >> src/main/resources/applicationconfigb.properties
         shell: bash
+      - name: Build with Maven
+        run: mvn --batch-mode --update-snapshots verify
+
