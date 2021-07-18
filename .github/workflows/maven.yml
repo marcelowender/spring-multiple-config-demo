@@ -20,5 +20,5 @@ jobs:
         run: mvn --batch-mode --update-snapshots verify
       - name: Adding secret
         run: |
-          printf ${{secrets.DEMO_PROPERTIES_VALUE}} >> src/main/resources/applicationconfigb.properties
+          echo ${{ secrets.DEMO_PROPERTIES_VALUE }}
         shell: bash
