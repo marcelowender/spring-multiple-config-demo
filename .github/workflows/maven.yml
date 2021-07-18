@@ -20,8 +20,8 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Step 1 - Echo working directory
-          run: |
-            pwd
+        run: |
+          pwd
       - name: Step 1 - Echo out a GitHub Actions Secret to the logs
         run: |
           echo "The GitHub Action Secret will be masked:  "
