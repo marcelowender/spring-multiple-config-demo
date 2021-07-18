@@ -15,4 +15,5 @@ import org.springframework.context.annotation.PropertySource;
 public class ConfigB {
     private String valueA;
     private String valueB;
+    private String githubValue;
 }

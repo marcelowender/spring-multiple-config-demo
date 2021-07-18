@@ -28,8 +28,10 @@ public class ServiceConfig {
 
         configValues.add("Config configB valueA propertie:" + configB.getValueA());
         configValues.add("Config configB valueB propertie:" + configB.getValueB());
+        configValues.add("Github Value" + configB.getGithubValue());
 
         configValues.add("Config springDefaultConfig valuea propertie:" + springDefaultConfig.getValueA());
+
         return configValues;
     }
 }

@@ -23,6 +23,11 @@
       "sourceType": "br.com.marcelo.configdemo.config.ConfigA"
     },
     {
+      "name": "configb.github-value",
+      "type": "java.lang.String",
+      "sourceType": "br.com.marcelo.configdemo.config.ConfigB"
+    },
+    {
       "name": "configb.value-a",
       "type": "java.lang.String",
       "sourceType": "br.com.marcelo.configdemo.config.ConfigB"
