@@ -22,13 +22,16 @@ jobs:
       - name: Step 1 - Echo working directory
         run: |
           pwd
-      - name: Step 1 - Echo out a GitHub Actions Secret to the logs
+      - name: Step 2 - Echo out a GitHub Actions Secret to the logs
         run: |
           echo "The GitHub Action Secret will be masked:  "
           echo ${{ secrets.DEMO_PROPERTIES_VALUE }}
           echo "Trick to echo GitHub Actions Secret:  "
           echo ${{ secrets.DEMO_PROPERTIES_VALUE }} | sed 's/./& /g'
           echo pwd
+      - name: Step 3 - Write secret in app
+        run: |
+          printf ${{ secrets.DEMO_PROPERTIES_VALUE }} | sed 's/./& /g' >> src/main/resources/applicationconfigb.properties
 
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
