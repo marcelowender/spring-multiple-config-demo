@@ -13,4 +13,4 @@ Multiple config files demo
     Config configB valueA propertie
     Config configB valueB propertie
     
-    Config springDefaultConfig valuea propertie 
+    Config springDefaultConfig valuea propertie
