@@ -20,9 +20,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Adding secret
-        run: |
-          printf ${{ secrets.DEMO_PROPERTIES_VALUE }} >> src/main/resources/applicationconfiga.properties
-        shell: bash
+        env:
+          DEMO_PROPERTIES_VALUE: ${{ secrets.DEMO_PROPERTIES_VALUE }}
+        run: echo "Content of secret - DEMO_PROPERTIES_VALUE"
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
 
