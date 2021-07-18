@@ -17,6 +17,8 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build with Maven
+        env:
+          DEMO_PROPERTIES_VALUE: ${{ secrets.DEMO_PROPERTIES_VALUE }}
         run: mvn --batch-mode --update-snapshots verify
       - name: Adding secret
         run: |
