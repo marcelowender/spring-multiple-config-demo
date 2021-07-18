@@ -4,7 +4,7 @@
 name: Multiple config files with CI/CD
 defaults:
   run:
-    shell: bash -ieo pipefail {0}
+    shell: bash
 
 on: [push]
 
