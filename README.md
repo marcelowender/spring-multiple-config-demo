@@ -3,7 +3,6 @@
 Multiple config files demo   
   
   This tutorial shows how we can have multiple properties files loaded on different beans.
-
   
  Output:
  
