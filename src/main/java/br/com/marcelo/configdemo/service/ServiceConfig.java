@@ -27,7 +27,6 @@ public class ServiceConfig implements CommandLineRunner {
         log.error("Config configB valueA propertie", configB.getValueA());
         log.error("Config configB valueB propertie", configB.getValueB());
 
-
         log.error("Config springDefaultConfig valuea propertie", springDefaultConfig.getValueA());
     }
 }
