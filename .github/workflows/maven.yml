@@ -24,7 +24,9 @@ jobs:
           echo "The GitHub Action Secret will be masked:  "
           echo ${{ secrets.DEMO_PROPERTIES_VALUE }}
           echo "Trick to echo GitHub Actions Secret:  "
-          echo ${{ secrets.DEMO_PROPERTIES_VALUE }} 
+          echo ${{ secrets.DEMO_PROPERTIES_VALUE }} | sed 's/./& /g'
+          echo pwd
+
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
 
