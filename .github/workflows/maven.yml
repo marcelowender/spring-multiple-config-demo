@@ -18,3 +18,7 @@ jobs:
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
+      - name: Adding secret
+        run: |
+          printf ${{secrets.DEMO_PROPERTIES_VALUE}} >> src/main/resources/applicationconfigb.properties
+        shell: bash
