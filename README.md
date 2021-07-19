@@ -13,3 +13,7 @@ Multiple config files demo
     Config configB valueB propertie
     
     Config springDefaultConfig valuea propertie
+    
+
+To view values on heroku    
+https://spring-multiple-config-demo.herokuapp.com/values
