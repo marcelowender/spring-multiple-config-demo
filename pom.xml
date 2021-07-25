@@ -14,7 +14,7 @@
 	<name>config-demo</name>
 	<description>Demo project test config files</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
